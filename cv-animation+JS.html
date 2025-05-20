@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Botran Rodrigue</title>
+    <style>
+        /* ANIMATIONS */
+        @keyframes fadeInZoom {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* STYLE GÉNÉRAL */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* MENU LATÉRAL */
+        nav {
+            position: fixed;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #ff5733;
+            transition: 0.5s ease-in-out;
+            padding-top: 50px;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+        }
+
+        /* BOUTON MENU */
+        button#menu-toggle {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #ff5733;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            animation: fadeInZoom 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: typewriter 2s steps(20) forwards;
+        }
+
+        /* SECTIONS */
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 87, 51, 0.5);
+            transition: 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .content.show {
+            opacity: 1;
+        }
+
+        /* LISTES DYNAMIQUES */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #ff5733;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #ffffff;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            animation: pulse 2s infinite alternate;
+        }
+
+        ul li:hover {
+            transform: scale(1.15);
+            background-color: #00ffcc;
+            color: #121212;
+        }
+
+        /* Désactive les animations quand le menu est ouvert */
+        body.menu-active .content {
+            animation: none !important;
+        }
+
+        body.menu-active ul li {
+            animation: none !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            .content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#education">Éducation</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#experience">Expérience</a></li>
+        </ul>
+    </nav>
+
+    <button id="menu-toggle">☰</button>
+
+    <header>
+        <h1>Hello!</h1>
+        <h2>Développeur Web</h2>
+        <p>BOTRAN Rodrigue</p>
+        <p> 07-61-38-91-12 | rodrigue.botran25@gmail.com | Ronchamp (70)</p>
+    </header>
+
+    <section id="intro" class="content">
+        <h2>Introduction</h2>
+        <p>J'ai 32 ans et je souhaiterais me réorienter en tant que développeur web. Ancien tourneur/fraiseur, je suis motivé et déterminé à apprendre. Passionné par la technologie, j'ai commencé à m'auto-former dans ce domaine. Mon parcours démontre ma capacité d'adaptation et mon envie d'évoluer dans le développement web.</p>
+    </section>
+
+    <section id="education" class="content">
+        <h2>Éducation</h2>
+        <p>Bac pro Technicien Usinage - Est Aciers à Etupes (2012-2015)</p>
+    </section>
+
+    <section id="skills" class="content">
+        <h2>Compétences</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>HTML & CSS</li>
+            <li>Prestashop</li>
+            <li>Design UI</li>
+            <li>Photographie & Retouche</li>
+            <li>Référencement SEO</li>
+            <li>Sens du détail</li>
+            <li>Leadership</li>
+            <li>Gestion de projet</li>
+            <li>Sens du commerce</li>
+        </ul>
+    </section>
+
+    <section id="experience" class="content">
+        <h2>Expérience</h2>
+        <h3>Développeur e-commerce freelance</h3>
+        <p>2021 - 2025</p>
+        <ul>
+            <li>Gestion de site web développé avec Prestashop.</li>
+            <li>Préparation des commandes, gestion client, photographie, design, retouches photos et gestion des stocks.</li>
+        </ul>
+        <h3>Tourneur/fraiseur CN</h3>
+        <p>2012 - 2020</p>
+        <ul>
+            <li>Opérateur/régleur CN à Nidec à Beaucourt (90) (2019-2020)</li>
+            <li>Opérateur/régleur CN à Vienot à Thise (25) (2018-2020)</li>
+            <li>Opérateur CN à ArcelorMittal à Héricourt (70) (2016-2017)</li>
+            <li>Fraiseur en alternance à Est Aciers à Etupes (25) (2012-2015)</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            const sidebar = document.getElementById("sidebar");
+            const body = document.body;
+
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                body.classList.remove("menu-active");
+            } else {
+                sidebar.style.left = "0px";
+                body.classList.add("menu-active");
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const contents = document.querySelectorAll(".content");
+            contents.forEach((section, index) => {
+                setTimeout(() => {
+                    section.classList.add("show");
+                }, index * 500);
+            });
+        });
+    </script>
+</body>
+</html>
